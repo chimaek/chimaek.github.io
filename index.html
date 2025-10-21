@@ -8,11 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>할 일 목록</h1>
+        <div class="header">
+            <h1>할 일 목록</h1>
+            <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+        </div>
 
         <div class="input-section">
             <input type="text" id="todoInput" placeholder="새로운 할 일을 입력하세요...">
+            <select id="prioritySelect" class="priority-select">
+                <option value="low">낮음</option>
+                <option value="medium" selected>보통</option>
+                <option value="high">높음</option>
+            </select>
             <button id="addBtn">추가</button>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="active">진행중</button>
+            <button class="filter-btn" data-filter="completed">완료</button>
         </div>
 
         <ul id="todoList"></ul>
@@ -20,6 +34,11 @@
         <div class="stats">
             <span>전체: <strong id="totalCount">0</strong></span>
             <span>완료: <strong id="completedCount">0</strong></span>
+            <span>진행중: <strong id="activeCount">0</strong></span>
+        </div>
+
+        <div class="actions">
+            <button id="clearCompleted" class="clear-btn">완료된 항목 삭제</button>
         </div>
     </div>
 
