@@ -33,7 +33,53 @@ h1 {
 .input-section {
     display: flex;
     gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-section {
+    margin-bottom: 15px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.filter-section {
+    display: flex;
+    gap: 10px;
     margin-bottom: 25px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: #f8f9fa;
+    color: #666;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #e9ecef;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
 }
 
 #todoInput {
@@ -125,6 +171,7 @@ h1 {
 .stats {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
@@ -134,6 +181,43 @@ h1 {
 .stats strong {
     color: #667eea;
     font-size: 1.1rem;
+}
+
+#clearCompleted {
+    padding: 8px 15px;
+    background: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+#clearCompleted:hover {
+    background: #ff7629;
+}
+
+#clearCompleted:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.todo-item.editing .todo-text {
+    display: none;
+}
+
+.todo-item .edit-input {
+    display: none;
+    flex: 1;
+    padding: 8px;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.todo-item.editing .edit-input {
+    display: block;
 }
 
 .empty-state {
